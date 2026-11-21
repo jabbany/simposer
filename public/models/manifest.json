@@ -1,0 +1,28 @@
+{
+  "models": [
+    {
+      "id": "xbot",
+      "file": "Xbot.glb",
+      "label": "X Bot (Mixamo, prototype only)",
+      "description": "smooth robot mannequin, male build",
+      "defaultBody": "adult_male",
+      "source": "three.js examples; Mixamo-derived, raw-file redistribution not permitted: replace before shipping"
+    },
+    {
+      "id": "michelle",
+      "file": "Michelle.glb",
+      "label": "Michelle (Mixamo, prototype only)",
+      "description": "woman in casual clothes",
+      "defaultBody": "adult_female",
+      "source": "three.js examples; Mixamo-derived, raw-file redistribution not permitted: replace before shipping"
+    },
+    {
+      "id": "soldier",
+      "file": "Soldier.glb",
+      "label": "Soldier (Mixamo, prototype only)",
+      "description": "armored man with visor",
+      "defaultBody": "athletic_male",
+      "source": "three.js examples; Mixamo-derived, raw-file redistribution not permitted: replace before shipping"
+    }
+  ]
+}
