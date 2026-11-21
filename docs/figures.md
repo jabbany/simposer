@@ -60,8 +60,9 @@ height by up to 5% either way.
 
 - `xbot`, `michelle` and `soldier` are Mixamo-rigged models copied from the
   three.js examples into `public/models/`, kept for prototyping. They follow
-  only the height parameter. Mixamo does not allow redistributing its raw
-  files, so they have to be removed before the app is shipped.
+  only the height parameter. Mixamo's terms do not allow redistributing its
+  raw files; these are shipped with the prototype, including the GitHub Pages
+  build, and should be replaced before a wider release.
 - Any humanoid `.glb` can be dropped onto the app; it is kept in IndexedDB.
   Models can also be listed in `public/models/manifest.json`. Either way the
   bone mapper has to recognize the skeleton (see

@@ -42,6 +42,22 @@ committed with the app.
 The app is a progressive web app (PWA): once loaded, it can be installed and
 used offline. Its service worker is registered only in production builds.
 
+### Hosting on GitHub Pages
+
+`.github/workflows/pages.yml` builds the app and publishes `dist/` on every
+push to `main`, or when run by hand from the Actions tab. To turn it on, set
+the repository's Settings > Pages > Build and deployment > Source to "GitHub
+Actions". The site appears at `https://<user>.github.io/<repo>/`. The build
+uses relative URLs, so it works under any repository name or a custom domain.
+
+The workflow uses Node 24 and pnpm 12.14.0, and installs from the lockfile. The MakeHuman kit in
+`public/models/makehuman/` must be committed, since the workflow does not run
+the `tools/` scripts.
+
+Each build names the service worker's cache after a hash of the built files,
+so visitors get the new files after a deployment changes them. See
+[llm.md](docs/llm.md) for using local language models from the hosted page.
+
 No language model is needed to try the app. Whatever is typed into the chat
 (press `Enter`) is first tried as commands, such as
 `add amy body adult_female pose walk`: if every line parses and applies, it

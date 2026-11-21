@@ -175,7 +175,9 @@ from it, so adding a word there makes it available everywhere.
 The app is a progressive web app (PWA). In production builds a service worker
 caches the app shell (the page, its manifest and `models/manifest.json`) when it
 installs, and other files, models included, the first time they are
-fetched. Pages are fetched network-first so updates arrive; everything else is
+fetched. The build names the cache after a hash of the built files
+(`vite.config.ts`), so a deployment that changes any file starts a fresh
+cache and the old one is deleted. Pages are fetched network-first so updates arrive; everything else is
 served from the cache first. Requests to other origins, such as language model
 APIs, bypass it. The human figure loads from a compact kit, a pair of files
 generated from CC0 MakeHuman data (see [figures.md](figures.md)).

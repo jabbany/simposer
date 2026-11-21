@@ -2,7 +2,9 @@
 // Navigation is network-first (so updates arrive), static assets and models
 // are cache-first. Cross-origin requests (LLM APIs) are never touched.
 
-const CACHE = 'simposer-v1';
+// The build replaces "dev" with a hash of the built files (vite.config.ts),
+// so each deployment that changes a file gets a fresh cache.
+const CACHE = 'simposer-dev';
 
 self.addEventListener('install', (event) => {
   event.waitUntil(

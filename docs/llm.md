@@ -28,6 +28,18 @@ The provider is chosen in the Settings window (`O`), with three fields:
 To call LM Studio running on another machine, use that machine's address in
 the base URL and enable CORS in LM Studio's server settings.
 
+From the hosted page on GitHub Pages, which is served over https:
+
+- Ollama accepts requests only from origins it is told to allow. Start it
+  with `OLLAMA_ORIGINS` set to the page's origin, for example
+  `OLLAMA_ORIGINS=https://<user>.github.io ollama serve`.
+- Browsers block requests from an https page to plain http addresses (mixed
+  content). Chrome and Firefox make an exception for `localhost`, so a model
+  server on the same machine works there; other browsers may not allow it. A
+  server on another machine needs https, or the app can be run locally with
+  `pnpm dev` instead.
+- The Anthropic provider works as it does locally.
+
 ## Translation
 
 `src/llm/translate.ts` builds the request:
